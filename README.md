@@ -47,7 +47,8 @@
          🛠️ Obtener actualizaciones del repositorio
            git pull origin main
 
-         
+         🚀 Características adicionales que mejoran funcionalidades:
+         Validación de nombres existentes: valida si un nombre a ingresar ya fue ingresado con anterioridad con la función "nombreExiste(nombre)"
        
 </body>
 </html>
