@@ -1,5 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
+  let contador = 0;
+  let nombres=[];
   function agregarAmigo(){
     // Capturamos los valores ingreados en el input llamado 'amigo'
     const valorElemento = document.getElementById("amigo").value;
@@ -31,7 +32,38 @@
   crearListaNombres();
   }
 
-  //Funcion para limpiar input amigo
+
+  agregarAmigo();
+
+  function crearListaNombres(){
+    // Obtener el elemento de la lista HTML
+    const listaNombres = document.getElementById('listaAmigos');
+  
+    // Limpiar la lista existente
+    listaNombres.innerHTML = '';
+  
+    // Recorrer el array de nombres
+    for (let i = 0; i < nombres.length; i++) {
+      // Crear un elemento <li>
+    
+      const nuevaLista = document.createElement('li');
+
+      // Agregar el nombre como texto del <li>
+    
+      nuevaLista.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
+      const elementoHTML= document.querySelector('h3');
+      elementoHTML.innerHTML=` ${i+1} ${(i === 0) ? 'amigo secreto ingresado' : ' amigos secretos ingresados'} `;
+      contador ++;
+
+    
+      // Agregar el elemento <li> a la lista
+      listaNombres.appendChild(nuevaLista);
+
+    }
+    
+  }
+   
+       //Funcion para limpiar input amigo
   function limpiarCaja(){
     document.querySelector('#amigo').value='';
         
@@ -41,38 +73,6 @@
   function nombreExiste(nombre){
     return nombres.includes(nombre);
   }
-
-  agregarAmigo();
-
-  
-  function crearListaNombres(){
-      // Obtener el elemento de la lista HTML
-      const listaNombres = document.getElementById('listaAmigos');
-    
-      // Limpiar la lista existente
-      listaNombres.innerHTML = '';
-    
-      // Recorrer el array de nombres
-      for (let i = 0; i < nombres.length; i++) {
-        // Crear un elemento <li>
-      
-        const nuevaLista = document.createElement('li');
-
-        // Agregar el nombre como texto del <li>
-       
-        nuevaLista.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
-        const elementoHTML= document.querySelector('h3');
-        elementoHTML.innerHTML=` ${i+1} ${(i === 0) ? 'amigo secreto ingresado' : ' amigos secretos ingresados'} `;
-        contador ++;
- 
-       
-        // Agregar el elemento <li> a la lista
-        listaNombres.appendChild(nuevaLista);
-
-      }
-      
-    }
-   
 
                  
                   
