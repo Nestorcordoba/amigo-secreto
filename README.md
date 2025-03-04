@@ -24,7 +24,7 @@
         
 
         
-📂 Estructura del Proyecto      
+📂 Estructura del Proyecto:     
 📦 Proyecto
  ┣ 📁 assets/      → imágenes
  ┣ 📄 app.js     → Dcodigo fuente
@@ -34,10 +34,10 @@
         🛠️ Clonar el repositorio en tu compuitadora
         git clone https://github.com/Nestorcordoba/amigo-secreto.git
 
-         <h2>🛠️ Subir cambios futuros</h2>
+        🛠️ Subir cambios futuros
            git add .
            git commit -m "Descripción de los cambios"
-           git push origin main</p>
+           git push origin main
 
          
          🛠️ Clonar el repositorio en tu compuitadora
