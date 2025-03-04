@@ -23,8 +23,8 @@
             Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
         
 
-        📂 Estructura del Proyecto
         
+📂 Estructura del Proyecto      
 📦 Proyecto
  ┣ 📁 assets/      → imágenes
  ┣ 📄 app.js     → Dcodigo fuente
