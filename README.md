@@ -31,7 +31,7 @@
  ┣ 📄 README.html  → Este archivo
         
 
-        🛠️ Clonar el repositorio en tu compuitadora
+        🛠️ Clonar el repositorio en tu computadora
         git clone https://github.com/Nestorcordoba/amigo-secreto.git
 
         🛠️ Subir cambios futuros
@@ -39,10 +39,6 @@
            git commit -m "Descripción de los cambios"
            git push origin main
 
-         
-         🛠️ Clonar el repositorio en tu compuitadora
-           git clone https://github.com/Nestorcordoba/amigo-secreto.git
-        
         
          🛠️ Obtener actualizaciones del repositorio
            git pull origin main

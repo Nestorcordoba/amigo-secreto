@@ -36,28 +36,26 @@
   agregarAmigo();
 
   function crearListaNombres(){
-    // Obtener el elemento de la lista HTML
-    const listaNombres = document.getElementById('listaAmigos');
+    // // Seleccionar la lista id 'listaAmigos' <lu> donde agregaremos la nueva lista <li> creada
+    const seleccionElementoLista = document.getElementById('listaAmigos');
   
     // Limpiar la lista existente
-    listaNombres.innerHTML = '';
+    seleccionElementoLista.innerHTML = '';
   
     // Recorrer el array de nombres
     for (let i = 0; i < nombres.length; i++) {
-      // Crear un elemento <li>
+      // por cada nombre almacenado en el array 'nombres' crear un elemento <li>
     
-      const nuevaLista = document.createElement('li');
-
-      // Agregar el nombre como texto del <li>
+      const nuevoElementoLi = document.createElement('li');
     
-      nuevaLista.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
-      const elementoHTML= document.querySelector('h3');
+      // Agregar el nuevo elemento <li> al elemento seleccionado id 'listaAmigos'.
+      seleccionElementoLista.appendChild(nuevoElementoLi);
+      // subtitulo que informa en la etiqueta h3 cuantos amigos fueron ingresados hasta el momento
+      const elementoHTML = document.querySelector('h3');
       elementoHTML.innerHTML=` ${i+1} ${(i === 0) ? 'amigo secreto ingresado' : ' amigos secretos ingresados'} `;
       contador ++;
-
-    
-      // Agregar el elemento <li> a la lista
-      listaNombres.appendChild(nuevaLista);
+      // Agregar el nombre como texto del <li>
+      nuevoElementoLi.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
 
     }
     
