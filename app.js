@@ -6,7 +6,7 @@
     const valorElemento = document.getElementById("amigo").value;
     
     // validamos si el nombre ingresado ya existe en el array e informamos con un alert
-    if(nombreExiste(valorElemento) ){
+    if(nombreExiste(valorElemento)){
     alert(`El nombre "${valorElemento}" ya existe en la lista.`);
     //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio luego del alert
     limpiarCaja();
@@ -14,10 +14,10 @@
     }
     //Validar la entrada para asegurarnos que no se ingresen vacios;
     else {
-        if(valorElemento == ''){
+        if(valorElemento ===''){
         
         alert("Por favor, inserte un nombre .");
-      // en el caso de que se ingrese un nombre agregarlo al array llamado 'nombres'
+      
     }
     // si el nombre no exite en el array lo guardamos en el mismo.
     else{
@@ -25,12 +25,15 @@
 
     } 
     
+   } 
+   limpiarCaja();
+  crearListaNombres();
+  
   } 
 
   //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio 
-  limpiarCaja();
-  crearListaNombres();
-  }
+  
+  
 
 
   agregarAmigo();
@@ -50,7 +53,7 @@
     
       // Agregar el nuevo elemento <li> al elemento seleccionado id 'listaAmigos'.
       seleccionElementoLista.appendChild(nuevoElementoLi);
-      nuevoElementoLi.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
+      nuevoElementoLi.innerHTML = `Amigo secreto ${i+1}: ${capitalizarNombre(nombres[i])}`;
       
       // subtitulo que informa en la etiqueta h3 cuantos amigos fueron ingresados hasta el momento
       const elementoHTML = document.querySelector('h3');
@@ -77,28 +80,30 @@
   }
   
   function sortearAmigo(){
+    //nsorteamos los nombres ingresados en el array
     let indiceAmigoSorteado =  Math.floor(Math.random() * nombres.length);
-    
-      if(nombres.length > 0){
-        
-        
-        const nombreAmigoSorteado = nombres[indiceAmigoSorteado];
+    // validar que el array no este vacio
+      if(nombres != ''){
+        // obtenemos el nombre a traves del indice
+        const nombreAmigoSorteado = capitalizarNombre(nombres[indiceAmigoSorteado]);
+        // seleccionamos elemento que mostrará el nombre sorteado
         const contElementoSorteado = document.getElementById("resultado");
+        //crear nuevo elemento que contendrá el nombre sorteado
         const nuevoElementoLi2 = document.createElement('li');
-        
+        // Agregamos el elemento a la lista de resultados
         contElementoSorteado.appendChild(nuevoElementoLi2);
         console.log("Indice sorteado", indiceAmigoSorteado);
         console.log("nombre sorteado", nombreAmigoSorteado);
-        nuevoElementoLi2.innerHTML = nombreAmigoSorteado;
-
-        
-        
-      
+        // mostramos el nombre sorteado en la lista creada
+        nuevoElementoLi2.innerHTML = `El amigo secreto sorteado es: ${nombreAmigoSorteado}`; 
     }
-    
-   
   }
   sortearAmigo();
+
+  // Función para capitalizar la primera letra de un nombre
+  function capitalizarNombre(nombre) {
+    return nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
+}
                   
               
          
