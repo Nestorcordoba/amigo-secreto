@@ -6,7 +6,7 @@
     const valorElemento = document.getElementById("amigo").value;
     
     // validamos si el nombre ingresado ya existe en el array e informamos con un alert
-    if(nombreExiste(valorElemento)){
+    if(nombreExiste(valorElemento) ){
     alert(`El nombre "${valorElemento}" ya existe en la lista.`);
     //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio luego del alert
     limpiarCaja();
@@ -37,7 +37,7 @@
 
   function crearListaNombres(){
     // // Seleccionar la lista id 'listaAmigos' <lu> donde agregaremos la nueva lista <li> creada
-    const seleccionElementoLista = document.getElementById('listaAmigos');
+    const seleccionElementoLista = document.getElementById("listaAmigos");
   
     // Limpiar la lista existente
     seleccionElementoLista.innerHTML = '';
@@ -50,14 +50,18 @@
     
       // Agregar el nuevo elemento <li> al elemento seleccionado id 'listaAmigos'.
       seleccionElementoLista.appendChild(nuevoElementoLi);
+      nuevoElementoLi.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
+      
       // subtitulo que informa en la etiqueta h3 cuantos amigos fueron ingresados hasta el momento
       const elementoHTML = document.querySelector('h3');
       elementoHTML.innerHTML=` ${i+1} ${(i === 0) ? 'amigo secreto ingresado' : ' amigos secretos ingresados'} `;
       contador ++;
       // Agregar el nombre como texto del <li>
-      nuevoElementoLi.textContent = `Amigo secreto ${i+1}: ${nombres[i]}`;
+      
+      
 
     }
+    console.log(seleccionElementoLista);
     
   }
    
@@ -71,8 +75,30 @@
   function nombreExiste(nombre){
     return nombres.includes(nombre);
   }
+  
+  function sortearAmigo(){
+    let indiceAmigoSorteado =  Math.floor(Math.random() * nombres.length);
+    
+      if(nombres.length > 0){
+        
+        
+        const nombreAmigoSorteado = nombres[indiceAmigoSorteado];
+        const contElementoSorteado = document.getElementById("resultado");
+        const nuevoElementoLi2 = document.createElement('li');
+        
+        contElementoSorteado.appendChild(nuevoElementoLi2);
+        console.log("Indice sorteado", indiceAmigoSorteado);
+        console.log("nombre sorteado", nombreAmigoSorteado);
+        nuevoElementoLi2.innerHTML = nombreAmigoSorteado;
 
-                 
+        
+        
+      
+    }
+    
+   
+  }
+  sortearAmigo();
                   
               
          
