@@ -6,22 +6,25 @@
     const valorElemento = document.getElementById("amigo").value;
     
     // validamos si el nombre ingresado ya existe en el array e informamos con un alert
-    
+    if(nombreExiste(valorElemento)){
+    alert(`El nombre "${valorElemento}" ya existe en la lista.`);
+    //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio luego del alert
+    limpiarCaja();
+    return;
+    }
     //Validar la entrada para asegurarnos que no se ingresen vacios;
     
-    if (valorElemento !== "") {
-      nombres.push(valorElemento);
-      } else {
-      alert("Por favor, inserte un nombre.");
-      }
+        if(valorElemento ===""){
+        
+        alert("Por favor, inserte un nombre .");
+      
+    }
+    // si el nombre no exite en el array lo guardamos en el mismo.
+    else{
+        nombres.push(valorElemento);
 
+    } 
     
-    if(nombreExiste(valorElemento)){
-      alert(`El nombre "${valorElemento}" ya existe en la lista.`);
-      //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio luego del alert
-      limpiarCaja();
-      return;
-      }
    
    //llamamos a la funcion 'LimpiarCaja' para resetaer a vacio 
    limpiarCaja();
