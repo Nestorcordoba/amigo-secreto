@@ -94,6 +94,9 @@
         console.log("nombre sorteado", nombreAmigoSorteado);
         // mostramos el nombre sorteado en la lista creada
         nuevoElementoLi2.innerHTML = `El amigo secreto sorteado es: ${nombreAmigoSorteado}`; 
+        reset(nombres,[]);
+        document.getElementById('botonSortearAmigo').setAttribute('disabled',true); 
+        
     }
   }
   sortearAmigo();
@@ -102,6 +105,11 @@
   function capitalizarNombre(nombre) {
     return nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
 }
+
+function reset(variable,valor){
+   variable = valor;
+}
+
                   
               
          
