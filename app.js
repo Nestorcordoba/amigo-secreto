@@ -94,8 +94,7 @@
         console.log("nombre sorteado", nombreAmigoSorteado);
         // mostramos el nombre sorteado en la lista creada
         nuevoElementoLi2.innerHTML = `El amigo secreto sorteado es: ${nombreAmigoSorteado}`; 
-        reset(nombres,[]);
-        document.getElementById('botonSortearAmigo').setAttribute('disabled',true); 
+        
         
     }
   }
